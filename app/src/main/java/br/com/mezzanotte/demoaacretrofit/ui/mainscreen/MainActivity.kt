@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 tvResultado.text = "Logradouro: ${end?.logradouro}\n" +
                         "Complemento: ${end?.complemento}\n" +
                         "Bairro: ${end?.bairro}\n" +
-                        "Localidade ${end?.localidade}\n" +
+                        "Localidade: ${end?.localidade}\n" +
                         "UF: ${end?.uf}"
                 Log.i("TAG", "SUCESSO")
             } else {
