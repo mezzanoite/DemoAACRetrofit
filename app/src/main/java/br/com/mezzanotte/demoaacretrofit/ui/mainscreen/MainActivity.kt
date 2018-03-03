@@ -2,9 +2,11 @@ package br.com.mezzanotte.demoaacretrofit.ui.mainscreen
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.opengl.Visibility
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import br.com.mezzanotte.demoaacretrofit.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -33,6 +35,15 @@ class MainActivity : AppCompatActivity() {
                 Log.i("TAG", "SUCESSO")
             } else {
                 Log.i("TAG", "ERRO: ${enderecoResponse.erro} ...")
+            }
+        })
+
+        mainViewModel.isLoading.observe(this, Observer {
+            isLoading ->
+            if (isLoading!!) {
+                loading.visibility = View.VISIBLE
+            } else {
+                loading.visibility = View.GONE
             }
         })
 
